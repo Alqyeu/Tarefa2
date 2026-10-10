@@ -5,9 +5,9 @@ int main (){
 	int comodo;
 	printf("Quantos cômodos sua casa terá: ");
 	scanf( "%d" , &comodo );
-	printf("\nVocê vai revestir as paredes com porcelanato?\n Aperte 1 para Sim\n Aperte 2 para não");
+	printf("\nCalcular porcelanato para a parede -> 1\nCalcular porcelanato para o ch�o ->2\nCalcular o porcelanato para ambos ->3");
 	scanf( "%d" , &validador);
-			if (validador == 1)	{
+			if (validador == 1 or validador == 3)	{
 				float alt;
 				float larg;
 				float comp;
@@ -16,23 +16,23 @@ int main (){
 				float compazu;
 				float azul;
 				float total;
-				printf("\nQual vai ser a largura dos cômodos? ");
+				printf("\nQual vai ser a largura dos comodos? ");
 				scanf("%f" , &larg);
-				printf("\nQual vai ser o comprimento dos cômodos? ");
+				printf("\nQual vai ser o comprimento dos comodos? ");
 				scanf("%f" , &comp);
-				printf("\nQual vai ser a altura dos cômodos? ");
+				printf("\nQual vai ser a altura dos comodos? ");
 				scanf("%f" , &alt);
-                printf("\nQual vai ser a largura do azulejo? ");
+                printf("\nQual vai ser a largura do azulejo?(cm) ");
 				scanf("%f" , &largazu);
-				printf("\nQual vai ser o comprimento do azulejo? ");
+				printf("\nQual vai ser o comprimento do azulejo?(cm) ");
 				scanf("%f" , &compazu);
 				area = larg * comp * alt;				
-                azul = largazu * compazu;
-				total = area / azul;				
-				printf("\nA área total dos cômodos é: %.2f m²" , area);
-				printf("\nA quantidade total de azulejos necessários é: %.2f" , total);
+                azul = 1/(0.0001*(largazu + compazu));
+				total = area * azul;				
+				printf("\nA �rea total dos c�modos s�o: %.2f m�" , area);
+				printf("\nA quantidade total de azulejos necessarios s�o: %.2f" , total);
 			}
-			else if (validador == 2){
+			else if (validador == 2 or validador == 3){
                 printf("\nVocê escolheu não revestir a parede de seus cômodos");
 			}
 			
